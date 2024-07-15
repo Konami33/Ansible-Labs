@@ -4,7 +4,7 @@ In this lab, we will be introduced to an automation tool called `Ansible`. So, w
 
 ## How Ansible Works
 
-Ansible works by connecting to nodes and pushing out small programs called "Ansible modules," which it executes over SSH before removing them. The primary language for these modules is Python, though any language that can return JSON can be used.
+Ansible works by connecting to nodes and pushing out small programs called "Ansible modules," which it executes over `SSH` before removing them. The primary language for these modules is Python, though any language that can return JSON can be used.
 
 ![Ansible Architecture](./images/image.png)
 
@@ -46,11 +46,11 @@ Check the Ansible version to verify the installation:
 3. To check the connection, run this command to `ping` the remote hosts:
 
     ```sh
-    ansible all --key-file ~/.ssh/id_rsa -i inventory -m ping
+    ansible all --key-file <your_key_file> -i inventory -m ping
     ```
     ![Ping Test](./images/image-2.png)
 
-    This command confirms the successful connection between the control node and the remote servers.
+    This command confirms the successful connection between the control node and the remote servers. Make sure, you can ssh into the remote servers using `your_key_file`
 
 ## Create Ansible Configuration File for a More Organized Setup
 
