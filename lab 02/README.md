@@ -2,7 +2,7 @@
 
 In this guide, we will walk through the process of installing Nginx on a remote server using Ansible. `Nginx` is a high-performance web server and reverse proxy that is widely used for serving static content, load balancing, and handling HTTP and HTTPS traffic.
 
-![alt text](./images/image-4.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2002/images/image-4.png)
 
 ## Prerequisites
 
@@ -107,7 +107,7 @@ ansible all -m ping
 ```
 If you get a response like this, then you are good to go:
 
-![alt text](./images/image-3.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2002/images/image-3.png)
 
 Run the playbook using the following command:
 
@@ -115,7 +115,7 @@ Run the playbook using the following command:
 ansible-playbook -i inventroy <path_to_your_playbook>/install_nginx.yml
 ```
 
-![alt text](./images/image.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2002/images/image.png)
 
 This command will execute the tasks defined in the `install_nginx.yml` playbook on the remote servers listed in the inventory file.
 
@@ -129,7 +129,7 @@ After the playbook has run successfully, verify that Nginx is installed and runn
     systemctl status nginx
     ```
     
-    ![alt text](./images/image-2.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2002/images/image-2.png)
 
     You can also verify from the other hosts also by ssh into that server.
 
@@ -144,7 +144,7 @@ After the playbook has run successfully, verify that Nginx is installed and runn
 You should see the default Nginx welcome page, indicating that Nginx is running correctly.
 You can also visit the browser if you can access the server publicly.
 
-![alt text](./images/image-1.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2002/images/image-1.png)
 
 ## Conclusion
 

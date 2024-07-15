@@ -6,7 +6,7 @@ In this lab, we will be introduced to an automation tool called `Ansible`. So, w
 
 Ansible works by connecting to nodes and pushing out small programs called "Ansible modules," which it executes over `SSH` before removing them. The primary language for these modules is Python, though any language that can return JSON can be used.
 
-![Ansible Architecture](./images/image.png)
+![Ansible Architecture](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image.png)
 
 1. **Control Node**: The machine where Ansible is installed and runs, executing playbooks written in YAML. No agents are needed on remote hosts, making Ansible scalable and efficient.
 
@@ -29,7 +29,7 @@ sudo apt-get install -y ansible
 
 Check the Ansible version to verify the installation:
 
-![Check Ansible Version](./images/image-1.png)
+![Check Ansible Version](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-1.png)
 
 ## Setup Ansible on the Control Node
 
@@ -48,7 +48,7 @@ Check the Ansible version to verify the installation:
     ```sh
     ansible all --key-file <your_key_file> -i inventory -m ping
     ```
-    ![Ping Test](./images/image-2.png)
+    ![Ping Test](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-2.png)
 
     This command confirms the successful connection between the control node and the remote servers. Make sure, you can ssh into the remote servers using `your_key_file`
 
@@ -79,7 +79,7 @@ Check the Ansible version to verify the installation:
     ```sh
     ansible all -m ping
     ```
-    ![Ping All Hosts](./images/image-4.png)
+    ![Ping All Hosts](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-4.png)
 
 ## Running Ad-hoc Commands
 
@@ -108,14 +108,14 @@ ansible <host-pattern> -i <inventory> -m <module> -a "<module-arguments>"
     ansible all --list-hosts
     ```
 
-    ![List Hosts](./images/image-5.png)
+    ![List Hosts](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-5.png)
 
 - To gather facts about the hosts:
 
     ```sh
     ansible all -m gather_facts --limit <remote_server_ip>
     ```
-    ![Gather Facts](./images/image-6.png)
+    ![Gather Facts](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-6.png)
 
 ## Running Elevated Ad-hoc Commands
 
@@ -146,11 +146,11 @@ In Ansible, you can run ad-hoc commands with elevated privileges by using the `-
     ansible all -m apt -a name=vim-nox --become
     ```
 
-    ![Install Package](./images/image-7.png)
+    ![Install Package](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-7.png)
 
     - You can also check on the remote hosts if the installation is done correctly:
 
-    ![Verify Installation](./images/image-8.png)
+    ![Verify Installation](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-8.png)
 
 3. Upgrade the distribution
 
@@ -158,8 +158,8 @@ In Ansible, you can run ad-hoc commands with elevated privileges by using the `-
     ansible all -m apt -a "upgrade=dist" --become
     ```
 
-    ![Upgrade Distribution](./images/image-9.png)
+    ![Upgrade Distribution](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2001/images/image-9.png)
 
 ---
 
-We have installed `Ansible` and set up our basic Ansible environment with a `control node` and `3 remote hosts`. We have also tested our setup by sending ping requests to the remote servers and running some ad-hoc commands. In the next lab, we will be introduced to `playbooks` and perform tasks by running them.
+We have installed `Ansible` and set up our basic Ansible environment with a `control node` and `3 remote hosts`. We have also tested our setup by sending `ping` requests to the remote servers and running some ad-hoc commands. In the next lab, we will be introduced to `playbooks` and perform tasks by running them.
