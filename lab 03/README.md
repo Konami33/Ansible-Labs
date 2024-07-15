@@ -4,7 +4,7 @@
 
 This guide provides step-by-step instructions for installing and configuring Jenkins on an Amazon EC2 instance using Ansible. The process involves setting up an EC2 instance, installing Ansible on your local machine, creating an Ansible playbook, executing it to install and configure Jenkins, and verifying the installation.
 
-![alt text](./images/jen-diagram.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-diagram.png)
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This guide provides step-by-step instructions for installing and configuring Jen
 
 Ensure you have an EC2 instance running and accessible via SSH. Configure the security group to allow inbound traffic on ports 22 (SSH) and 8080 (Jenkins).
 
-![alt text](./images/jen-01.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-01.png)
 
 ### Step 2: Install Ansible
 
@@ -58,11 +58,11 @@ ec2-instance ansible_host=<EC2_PUBLIC_IP> ansible_user=ubuntu ansible_ssh_privat
 
 Replace `<EC2_PUBLIC_IP>` with your EC2 instance's public IP address and adjust the path to your SSH key.
 
-![alt text](./images/jen-02.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-02.png)
 
 Find the path of your key-pair file:
 
-![alt text](./images/jen-03.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-03.png)
 
 Create a playbook file named `install_jenkins.yml`:
 
@@ -164,7 +164,7 @@ ansible-playbook -i hosts.ini install_jenkins.yml
 
 This command will connect to your EC2 instance and perform the steps defined in the playbook to install and configure Jenkins.
 
-![alt text](./images/jen-04.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-04.png)
 
 ### Step 5: Verify the Installation
 
@@ -184,7 +184,7 @@ This command will connect to your EC2 instance and perform the steps defined in 
 
    The output should indicate that Jenkins is active and running.
 
-   ![alt text](./images/jen-05.png)
+   ![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-05.png)
 
 3. **Access Jenkins web interface:**
 
@@ -196,18 +196,18 @@ This command will connect to your EC2 instance and perform the steps defined in 
 
    You should see the Jenkins setup wizard.
 
-   ![alt text](./images/jen-06.png)
+   ![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-06.png)
 
 4. **Complete Jenkins setup:**
 
    - Use the initial admin password displayed in the Ansible playbook output to unlock Jenkins.
-    ![alt text](./images/jen-07.png)
+    ![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-07.png)
 
    - Follow the setup wizard to install suggested plugins and create an admin user.
 
-    ![alt text](./images/jen-08.png)
+    ![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-08.png)
 
-    ![alt text](./images/jen-09.png)
+    ![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/jen-09.png)
 
 ## Conclusion
 
