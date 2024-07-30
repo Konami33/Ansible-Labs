@@ -2,7 +2,7 @@
 
 In this lab, we will walk through the process of installing `Docker and related packages` on remote servers using Ansible.
 
-![alt text](./images/image-6.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image-6.png)
 
 ## Prerequisites
 
@@ -152,7 +152,7 @@ ansible-playbook -i inventory <path_to_your>/playbook.yml
 ```
 Check the logs if all the tasks are completed successfully or not:
 
-![alt text](./images/image-3.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image-3.png)
 
 ## Step 5: Verify Docker Installation
 
@@ -163,7 +163,7 @@ After running the playbook, verify that Docker is installed correctly or not.
 ssh -i <path_to_your_sshkey>/id_rsa ubuntu@<remote_server_ip
 ```
 
-![alt text](./images/image-1.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image-1.png)
 
 - After entering into the remote server, check the docker version:
 
@@ -172,8 +172,8 @@ docker --version
 docker ps
 ```
 
-![alt text](./images/image.png)
-![alt text](./images/image-4.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image-4.png)
 
 
 *NOTE: Possible problems:*
@@ -187,7 +187,7 @@ permission denied while trying to connect to the Docker daemon socket at unix://
 
 This happens if you have already ssh into the remote servers terminal before running the playbook which will install the docker. Because for the `group membership` changes to take effect, the user needs to `log out` and `log back in`. So to solve, this close this terminal and create a new terminal. It will solve the issue.
 
-![alt text](./images/image-5.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image-5.png)
 
 - We can also check by pulling any images from docker hub
 
@@ -196,6 +196,6 @@ docker pull nginx
 docker pull redis
 ```
 
-![alt text](./images/image-2.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image-2.png)
 
 So, we have completed our task of installing Docker and other packages into the remote servers using Ansible playbook. We have created an inventory file to define the remote hosts, wrote a playbook to install and start `Docker`, configured Ansible settings, and ran the playbook to complete the installation. This approach allows for efficient and repeatable deployment of software across multiple servers.
