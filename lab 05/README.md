@@ -4,7 +4,7 @@
 
 This guide provides step-by-step instructions for installing and configuring Redis on an Amazon EC2 instance using Ansible. The process involves setting up an EC2 instance, installing Ansible on your local machine, creating an Ansible playbook, executing it to install and configure Redis, and verifying the installation.
 
-![alt text](./images/redis-diagram.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2005/images/redis-diagram.png)
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This guide provides step-by-step instructions for installing and configuring Red
 
 Ensure you have an EC2 instance running and accessible via SSH. Configure the security group to allow inbound traffic on ports 22 (SSH) and 6379 (Redis).
 
-![alt text](./images/redis-01.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2005/images/redis-01.png)
 
 ### Step 2: Install Ansible
 
@@ -58,11 +58,11 @@ ec2-instance ansible_host=<EC2_PUBLIC_IP> ansible_user=ubuntu ansible_ssh_privat
 
 Replace `<EC2_PUBLIC_IP>` with your EC2 instance's public IP address and adjust the path to your SSH key.
 
-![alt text](./images/redis-02.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2005/images/redis-02.png)
 
 Find the path of your key-pair file:
 
-![alt text](./images/redis-06.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2005/images/redis-06.png)
 
 Create a playbook file named `install_redis.yml`:
 
@@ -143,7 +143,7 @@ ansible-playbook -i hosts.ini install_redis.yml
 
 This command will connect to your EC2 instance and perform the steps defined in the playbook to install and configure Redis.
 
-![alt text](./images/redis-03.png)
+![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2005/images/redis-03.png)
 
 ### Step 5: Verify the Installation
 
@@ -163,7 +163,7 @@ This command will connect to your EC2 instance and perform the steps defined in 
 
    The output should indicate that Redis is active and running.
 
-   ![alt text](./images/redis-04.png)
+   ![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2005/images/redis-04.png)
 
 3. **Test Redis connection:**
 
@@ -185,7 +185,7 @@ This command will connect to your EC2 instance and perform the steps defined in 
 
    You should see the value you set being returned.
 
-   ![alt text](./images/redis-05.png)
+   ![alt text](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2005/images/redis-05.png)
 
 ## Conclusion
 
