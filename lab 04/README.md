@@ -120,6 +120,43 @@ In this lab, we will walk through the process of installing `Docker and related 
             - docker.service
             - containerd.service
     ```
+
+### Playbook explanation:
+
+1. **Playbook Initialization**
+   - **hosts**: all - Targets all hosts.
+   - **become**: true - Runs tasks with elevated privileges.
+
+2. **Update and Upgrade Packages**
+   - Updates the package list and upgrades all packages to their latest versions.
+
+3. **Install Required Packages**
+   - Installs essential packages for Docker installation (`apt-transport-https`, `ca-certificates`, `curl`, `gnupg`, `software-properties-common`).
+
+4. **Create Directory for Docker's GPG Key**
+   - Creates a directory `/etc/apt/keyrings` to store Docker’s GPG key.
+
+5. **Add Docker's Official GPG Key**
+   - Downloads and adds Docker’s GPG key to `/etc/apt/keyrings/docker.gpg`.
+
+6. **Print Architecture Variables**
+   - Prints system architecture and Ubuntu codename for debugging purposes.
+
+7. **Add Docker Repository**
+   - Adds Docker's official APT repository to the system's sources list.
+
+8. **Install Docker and Related Packages**
+   - Installs Docker packages (`docker-ce`, `docker-ce-cli`, `containerd.io`, `docker-buildx-plugin`, `docker-compose-plugin`).
+
+9. **Add Docker Group**
+   - Ensures the Docker group is present.
+
+10. **Add User to Docker Group**
+    - Adds the current user to the Docker group to allow running Docker commands without `sudo`.
+
+11. **Enable and Start Docker Services**
+    - Enables and starts Docker and containerd services.
+
 ## Step 3: Create an Ansible Configuration File
 
 - Create an `ansible.cfg` file to define configuration settings for your Ansible environment:
