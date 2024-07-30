@@ -4,6 +4,7 @@ In this lab, we will walk through the process of installing `Docker and related 
 
 ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2004/images/image-6.png)
 
+
 ## Prerequisites
 
 1. **Ansible Installed on Control Node**: Ensure that Ansible is installed on your control node. Here we are using the Poridhi vs-code ubuntu terminal as the control node.
