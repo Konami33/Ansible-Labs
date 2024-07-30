@@ -1,6 +1,6 @@
 # Installing Nginx Using Ansible
 
-In this lab, we will walk through the process of installing `Nginx` on a remote server using Ansible.`Nginx` is a high-performance web server and reverse proxy that is widely used for serving static content, load balancing, and handling HTTP and HTTPS traffic.
+In this lab, we will walk through the process of installing `Nginx` on remote servers using Ansible.`Nginx` is a high-performance web server and reverse proxy that is widely used for serving static content, load balancing, and handling HTTP and HTTPS traffic.
 
 ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2002/images/image-4.png)
 
@@ -9,58 +9,57 @@ In this lab, we will walk through the process of installing `Nginx` on a remote 
 1. **Ansible Installed on Control Node**: Ensure that Ansible is installed on your control node.
 2. **SSH Access**: Ensure that the control node can SSH into the remote servers using a key pair.
 
+## Step by step guide
+
 ## Step 1: Create an Inventory File
 
-Create a directory for your Ansible project and navigate into it. Then create an inventory file to define the remote hosts:
+- Create a directory for your Ansible project and navigate into it.
 
-```sh
-mkdir ansible
-cd ansible
-```
+  ```sh
+  mkdir ansible
+  cd ansible
+  ```
 
-## Step 2: Create inventory file
+- Create a file named `inventory` and add the IP addresses or hostnames of your remote servers in the `inventory` file:
 
-Add the IP addresses or hostnames of your remote servers in the `inventory` file:
-
-```ini
-[webservers]
-<remote_server_1_IP>
-<remote_server_2_IP>
-<remote_server_3_IP>
-```
+  ```ini
+  <remote_server_1_IP>
+  <remote_server_2_IP>
+  <remote_server_3_IP>
+  ```
 
 ## Step 2: Create an Ansible Playbook
 
-Create a playbook named `install_nginx.yml`:
+- Create a playbook named `install_nginx.yml`:
 
-```sh
-nano install_nginx.yml
-```
+  ```sh
+  nano install_nginx.yml
+  ```
 
-Add the following content to the playbook file:
+- Add the following content to the playbook file:
 
-```yaml
----
-- name: Install Nginx on web servers
-  hosts: webservers
-  become: true
+  ```yaml
+  ---
+  - name: Install Nginx on web servers
+    hosts: webservers
+    become: true
 
-  tasks:
-    - name: Update apt repository cache
-      apt:
-        update_cache: yes
+    tasks:
+      - name: Update apt repository cache
+        apt:
+          update_cache: yes
 
-    - name: Install Nginx
-      apt:
-        name: nginx
-        state: present
+      - name: Install Nginx
+        apt:
+          name: nginx
+          state: present
 
-    - name: Ensure Nginx is running
-      service:
-        name: nginx
-        state: started
-        enabled: yes
-```
+      - name: Ensure Nginx is running
+        service:
+          name: nginx
+          state: started
+          enabled: yes
+  ```
 
 ### Explanation
 
