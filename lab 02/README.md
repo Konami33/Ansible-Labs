@@ -1,14 +1,13 @@
 # Installing Nginx Using Ansible
 
-In this guide, we will walk through the process of installing Nginx on a remote server using Ansible. `Nginx` is a high-performance web server and reverse proxy that is widely used for serving static content, load balancing, and handling HTTP and HTTPS traffic.
+In this lab, we will walk through the process of installing `Nginx` on a remote server using Ansible.`Nginx` is a high-performance web server and reverse proxy that is widely used for serving static content, load balancing, and handling HTTP and HTTPS traffic.
 
 ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2002/images/image-4.png)
 
 ## Prerequisites
 
 1. **Ansible Installed on Control Node**: Ensure that Ansible is installed on your control node.
-2. **Inventory File**: Create an inventory file that lists the remote servers where Nginx will be installed.
-3. **SSH Access**: Ensure that the control node can SSH into the remote servers using a key pair.
+2. **SSH Access**: Ensure that the control node can SSH into the remote servers using a key pair.
 
 ## Step 1: Create an Inventory File
 
@@ -32,7 +31,7 @@ Add the IP addresses or hostnames of your remote servers in the `inventory` file
 
 ## Step 2: Create an Ansible Playbook
 
-Create a playbook file named `install_nginx.yml`:
+Create a playbook named `install_nginx.yml`:
 
 ```sh
 nano install_nginx.yml
@@ -148,4 +147,4 @@ You can also visit the browser if you can access the server publicly.
 
 ## Conclusion
 
-In this guide, we have learned how to install Nginx on remote servers using Ansible. We created an inventory file to define the remote hosts, wrote a playbook to install and start Nginx, configured Ansible settings, and ran the playbook to complete the installation. This approach allows for efficient and repeatable deployment of software across multiple servers.
+In this guide, we have learned how to install Nginx on remote servers using `Ansible`. We created an inventory file to define the remote hosts, wrote a playbook to install and start Nginx, configured Ansible settings, and ran the playbook to complete the installation. This approach allows for efficient and repeatable deployment of software across multiple servers.
