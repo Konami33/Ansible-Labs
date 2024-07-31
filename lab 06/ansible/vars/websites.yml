@@ -1,7 +1,7 @@
 websites:
   - name: webserver1
-    src: ../../webpage1/index.html
+    src:  /home/yasin/lab4/webpage1/index.html
     dest: /var/www/html/index.html
   - name: webserver2
-    src: ../../webpage2/index.html
+    src:  /home/yasin/lab4/webpage2/index.html
     dest: /var/www/html/index.html

@@ -5,6 +5,10 @@
   vars_files:
     - vars/websites.yml
   tasks:
+    - name: Update apt repository cache
+      apt:
+        update_cache: yes
+        
     - name: Ensure Nginx is installed
       apt:
         name: nginx
