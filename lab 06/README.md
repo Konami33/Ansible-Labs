@@ -7,7 +7,7 @@ We will walk through the process of setting up an Ansible playbook to:
 2. Deploy two different `websites` to these servers.
 3. Ensure that the `Nginx service` is restarted whenever there is a change in the website content.
 
-![alt text](./images/image-6.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2006/images/image-6.png)
 
 To achieve this, we will:
 - Define our target servers in an `inventory` file.
@@ -21,7 +21,7 @@ By the end of this, we will have a fully automated solution for deploying and ma
 1. **Ansible Installed on Control Node**: Ensure that Ansible is installed on your control node.
 2. **Remote servers**: Ensure you have created the remote servers where you want to deploy the websites. Here we have used aws ec2 instance.
 
-  ![alt text](./images/image.png)
+  ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2006/images/image.png)
 
 2. **SSH Access**: Ensure that the control node can SSH into the remote servers using a key pair.
 
@@ -188,7 +188,7 @@ Ensure you have your HTML files with the embedded CSS:
   ```
 If you get a response like this, then you are good to go:
 
-  ![alt text](./images/image-1.png)
+  ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2006/images/image-1.png)
 
 - Navigate to the `ansible` directory and execute the playbook using the following command:
 
@@ -199,7 +199,7 @@ If you get a response like this, then you are good to go:
 
 This command will execute the playbook and deploy the two websites on the remote servers. Check any error while running the playbook. If everything is alright, you will get output something like this:
 
-  ![alt text](./images/image-2.png)
+  ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2006/images/image-2.png)
 
 ### Verification
 
@@ -211,7 +211,7 @@ To verify our task, we can check step by step
   systemctl status nginx
   ```
 
-  ![alt text](./images/image-3.png)
+  ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2006/images/image-3.png)
 
   Here we can see the nginx is running perfectly.
 
@@ -220,7 +220,7 @@ To verify our task, we can check step by step
   ```sh
   ls /var/www/html
   ```
-  ![alt text](./images/image-4.png)
+  ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2006/images/image-4.png)
 
 - Now check if the website is running successfully:
 
@@ -231,7 +231,7 @@ To verify our task, we can check step by step
   http://<remote_server_2_ip>
   ```
 
-  ![alt text](./images/image-5.png)
+  ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2006/images/image-5.png)
 
   Here, we can see our website are deployed and running successfully. 
 ---
