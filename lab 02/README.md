@@ -23,6 +23,7 @@ In this lab, we will walk through the process of installing `Nginx` on remote se
 - Create a file named `inventory` and add the IP addresses or hostnames of your remote servers in the `inventory` file:
 
   ```ini
+  [webservers]
   <remote_server_1_IP>
   <remote_server_2_IP>
   <remote_server_3_IP>
