@@ -21,9 +21,11 @@ This guide provides step-by-step instructions for installing and configuring Pos
 
 ### Step 1: Set up Your EC2 Instances
 
-Ensure you have EC2 instances running and accessible via SSH. Configure the security groups to allow inbound traffic on ports 22 (SSH) and 5432 (PostgreSQL).
+Ensure you have multiple EC2 instances running and accessible via SSH. Configure the security groups to allow inbound traffic on ports 22 (SSH) and 5432 (PostgreSQL).
 
-![EC2 Setup](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/pg-01.png)
+![alt text](./images/postgres-01.png)
+
+![alt text](./images/postgres-02.png)
 
 ### Step 2: Install Ansible
 
@@ -59,7 +61,11 @@ ec2-instance2 ansible_host=<EC2_PUBLIC_IP_2> ansible_user=ubuntu ansible_ssh_pri
 
 Replace `<EC2_PUBLIC_IP_1>` and `<EC2_PUBLIC_IP_2>` with your EC2 instances' public IP addresses and adjust the path to your SSH key.
 
-![Inventory File](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/pg-02.png)
+![alt text](./images/postgres-03.png)
+
+Find the path of your key-pair file:
+
+![alt text](./images/postgres-04.png)
 
 Create a playbook file named `install_postgresql.yml`:
 
@@ -128,7 +134,7 @@ ansible-playbook -i hosts.ini install_postgresql.yml
 
 This command will connect to your EC2 instances and perform the steps defined in the playbook to install and configure PostgreSQL.
 
-![Playbook Execution](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/pg-04.png)
+![alt text](./images/postgres-05.png)
 
 ### Step 5: Verify the Installation
 
@@ -149,7 +155,7 @@ This command will connect to your EC2 instances and perform the steps defined in
 
    The output should indicate that PostgreSQL is active and running.
 
-   ![Service Status](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/pg-05.png)
+   ![alt text](./images/postgres-06.png)
 
 3. **Access PostgreSQL:**
 
@@ -162,7 +168,7 @@ This command will connect to your EC2 instances and perform the steps defined in
 
    You should be able to access the PostgreSQL command line interface.
 
-   ![PostgreSQL CLI](https://raw.githubusercontent.com/Konami33/Ansible-Labs/main/lab%2003/images/pg-06.png)
+   ![alt text](./images/postgres-07.png)
 
 ## Conclusion
 
