@@ -9,3 +9,4 @@
 7. [Installing Redis on an EC2 Instance Using Ansible Playbook](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2005)
 8. [Installing Docker on remote servers using Ansible Playbook](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2004)
 9. [Automating Nginx Website Deployment with Ansible](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2006)
+10. [Installing and Configuring PostgreSQL on Multiple EC2 Instances Using Ansible Playbook](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2007)
