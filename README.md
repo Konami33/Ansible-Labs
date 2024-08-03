@@ -10,6 +10,6 @@
 8. [Installing Docker on remote servers using Ansible Playbook](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2004)
 9. [Automating Nginx Website Deployment with Ansible](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2006)
 10. [Installing and Configuring PostgreSQL on Multiple EC2 Instances Using Ansible Playbook](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2007)
-11. [AWS Infrastructure Deployment with Ansible](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2008)
-12. [AWS Infrastructure Deployment with Ansible](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2009)
+11. [AWS Infrastructure Deployment with Ansible (VPC)](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2008)
+12. [AWS Infrastructure Deployment with Ansible (EC2)](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2009)
 13. [AWS Infrastructure Deployment with Ansible (Role-based)](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2010)
