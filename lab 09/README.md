@@ -2,7 +2,7 @@
 
 This lab guides you through the process of automating the deployment of an AWS VPC, Subnet, Internet Gateway, Route Table, Security Group, Key Pair, and EC2 Instance using Ansible.
 
-![alt text](./images/image.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image.png)
 
 ## Project Structure
 
@@ -45,7 +45,7 @@ Check the Ansible version to verify the installation:
 
     Botocore is the low-level foundation library for Boto3. It provides the core functionality for making raw HTTP requests to AWS services. While Boto3 is built on top of Botocore, the latter can be used independently for more granular control over AWS interactions.
 
-    ![alt text](./images/image-1.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-1.png)
 
 - Install amazon aws collection
 
@@ -53,7 +53,7 @@ Check the Ansible version to verify the installation:
     ansible-galaxy collection install amazon.aws
     ```
 
-    ![alt text](./images/image-2.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-2.png)
 ## Step 02: Set Up AWS Configuration
 
 Now We need to configure our AWS credentials. We can do this by using the AWS credentials file.
@@ -81,7 +81,7 @@ Now We need to configure our AWS credentials. We can do this by using the AWS cr
 
 - You can see the AWS CLI configuration file located at `~/.aws/config` and `~/.aws/credentials`.
 
-    ![alt text](./images/image-3.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-3.png)
 
 
 ## Step 03: Create the key pair for the EC2 instance
@@ -93,7 +93,7 @@ Now We need to configure our AWS credentials. We can do this by using the AWS cr
     ```
     This will create a keypair( public-key and private-key ) in the `~/.ssh/` directory.
 
-    ![alt text](./images/image-4.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-4.png)
 
     We will use the public-key for instance creation and private key for ssh.
 
@@ -245,7 +245,7 @@ This Ansible playbook is designed to automate the creation of AWS infrastructure
    ```
     This command will execute the playbook and create the necessary resouces. Check any error while running the playbook. If everything is alright, you will get output something like this:
 
-    ![alt text](./images/image-5.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-5.png)
 
 ## Verification
 
@@ -253,11 +253,11 @@ This Ansible playbook is designed to automate the creation of AWS infrastructure
 
     - Check VPC:
 
-        ![alt text](./images/image-7.png)
+        ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-7.png)
 
     - Check ec2 instance:
 
-       ![alt text](./images/image-6.png)
+       ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-6.png)
 
 
 - As we have the private key in our local machine, we can ssh into the instance that we have created:
@@ -266,7 +266,7 @@ This Ansible playbook is designed to automate the creation of AWS infrastructure
     ssh -i ~/.ssh/id_rsa ubuntu@public_instance_ip
     ```
 
-    ![alt text](./images/image-8.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2009/images/image-8.png)
 
 So, we have successfully completed the task.
 
