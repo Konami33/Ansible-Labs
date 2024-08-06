@@ -13,3 +13,4 @@
 11. [AWS Infrastructure Deployment with Ansible (VPC)](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2008)
 12. [AWS Infrastructure Deployment with Ansible (EC2)](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2009)
 13. [AWS Infrastructure Deployment with Ansible (Role-based)](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2010)
+14. [Launch multiple EC2 instances with different AMI IDs using Ansible and install Nginx into these instances](https://github.com/Konami33/Ansible-Labs/tree/main/lab%2011)
