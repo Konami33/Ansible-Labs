@@ -2,7 +2,7 @@
 
 This lab will guide you through the process of launching multiple EC2 instances with different AMI (Amazon Machine Image) IDs using Ansible. Additionally, we'll demonstrate how to install and configure `NGINX`, a popular web server, on these instances.
 
-![alt text](./images/image-4.png)
+![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2011/images/image-4.png)
 
 ### Overview
 
@@ -384,7 +384,7 @@ redhat
 ```
 - keep the `hosts.ini` file empty. It will be dynamically populated with the correct instance IPs, ensuring the Ansible inventory is up-to-date.
 
-    ![alt text](./images/image-5.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2011/images/image-5.png)
 
     Here, we can see after running the playbook, the inventory file is automatically updated.
 
@@ -415,7 +415,7 @@ redhat
    ```
     This command will execute the playbook and create the necessary resouces. Check any error while running the playbook. If everything is alright, you will get output something like this:
 
-    ![alt text](./images/image.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2011/images/image.png)
 
 - You can go to the aws console to see if all the necessary rources are created or not.
 
@@ -425,7 +425,7 @@ redhat
 
     - Check ec2 instance:
 
-        ![alt text](./images/image-1.png)
+        ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2011/images/image-1.png)
     
 
 
@@ -533,7 +533,7 @@ This role installs `Python 3` and `NGINX` on different Linux distributions (Ubun
    ```
     This command will execute the playbook and create the necessary resouces. Check any error while running the playbook. If everything is alright, you will get output something like this:
 
-    ![alt text](./images/image-2.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2011/images/image-2.png)
 
 - For further verification we can ssh into any instance and check the status of the nginx
 
@@ -541,7 +541,7 @@ This role installs `Python 3` and `NGINX` on different Linux distributions (Ubun
     ssh -i "path_to_your_key" ec2-user@public_ip_of_amazon_linux
     ```
 
-    ![alt text](./images/image-3.png)
+    ![alt text](https://github.com/Konami33/Ansible-Labs/raw/main/lab%2011/images/image-3.png)
 
     Here, we can see the nginx is successfully installed and running.
 
