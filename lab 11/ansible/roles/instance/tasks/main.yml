@@ -1,0 +1,52 @@
+- name: Launch EC2 instances
+  amazon.aws.ec2_instance:
+    name: "{{ item.name }}"
+    key_name: "{{ key_name }}"
+    instance_type: "{{ item.instance_type }}"
+    image_id: "{{ item.ami_id }}"
+    region: "{{ region }}"
+    vpc_subnet_id: "{{ subnet.subnet.id }}"
+    security_group: "{{ sg.group_id }}"
+    network:
+      assign_public_ip: true
+    count_tag:
+      Name: "{{ item.name }}"
+    tags:
+      Name: "{{ item.name }}"
+    wait: yes
+    state: present
+  with_items:
+    - { name: "Ubuntu-Instance", ami_id: "ami-0abcdef1234567890", instance_type: "t2.micro" }
+    - { name: "AmazonLinux-Instance", ami_id: "ami-0fedcba0987654321", instance_type: "t2.small" }
+    - { name: "MacOS-Instance", ami_id: "ami-0123456789abcdef0", instance_type: "t2.medium" }
+  register: ec2
+
+- name: Define group mappings
+  set_fact:
+    group_mappings:
+      Ubuntu-Instance: ubuntu
+      AmazonLinux-Instance: amazon
+      MacOS-Instance: macos
+
+- name: Add instances to appropriate groups
+  add_host:
+    hostname: "{{ item.public_ip }}"
+    groupname: "{{ group_mappings[item.tags.Name] }}"
+  with_items: "{{ ec2.instances }}"
+  when: item.state == 'running'
+
+- name: Wait for SSH to come up
+  wait_for:
+    host: "{{ item.public_ip }}"
+    port: 22
+    delay: 60
+    timeout: 320
+    state: started
+  with_items: "{{ ec2.instances }}"
+  when: item.state == 'running'
+
+- name: Display instance details
+  debug:
+    msg: "Instance {{ item.id }} with public IP {{ item.public_ip }} is launched and running."
+  with_items: "{{ ec2.instances }}"
+  when: item.state == 'running'
